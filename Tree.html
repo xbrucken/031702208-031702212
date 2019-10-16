@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>学术家族树</title>
+    <link rel="stylesheet" href="metroStyle.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.ztree.all.js"></script>
+    <script type="text/javascript" src="jquery.ztree.core.js"></script>
+    <script type="text/javascript" src="set.js"></script>
+    
+    <style>
+        /* .ztree {
+            margin:0; 
+            width:300px; 
+            padding:5px; 
+            color:#333; 
+            word-break: break-all; 
+            word-wrap:break-word;
+        }
+        .ztree li{
+            padding:0; 
+            margin:0; 
+            list-style:none;  
+            display:inline; 
+            line-height:14px; 
+            text-align:left;  outline:0;
+        } */
+    </style>
+    <script>
+        $(document).ready(function() {
+            $("#butt").click(function() {
+                toLine();//提取每一行进Arr
+                // for(var i=0;i<Arr.length;i++){
+                //     $("#specialbr").before("<p>"+Arr[i]+"</p>");
+                // }
+                getSname(Arr[0]);//拆第一行→导师名
+                zNodes[0].menuName=(Arr2[0]);
+                zTreeObj=$.fn.zTree.init($("#regionZTree"),setting,zNodes);
+                secondLayer();//xx级xx生
+                thirdLayer();//xxx、xxx、xxx
+            })
+        })
+    </script>
+    <style>
+        button{
+            display: inline-block;
+            border:solid 0px;
+            outline:none;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            color:white;
+            background-color: rgb(113, 178, 238);
+            border-radius: 4px;
+            box-shadow:3px 3px 2px rgb(179, 178, 178);
+        }
+        button:hover{
+            color:rgb(113, 178, 238);
+            background-color:white;
+        }
+        textarea{
+            /* background:transparent; */
+            opacity: 0.5;
+            border:1px solid #ffffff;
+            box-shadow:5px 5px 5px rgb(148, 148, 148);
+        }
+        body{
+            color: #000;
+            background-color:rgb(221, 228, 241);
+            /* background:url(.jpg) no-repeat fixed; */
+            background-size: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <ul id="regionZTree" class="ztree"></ul>
+    </div>
+    <script>
+            zTreeObj=$.fn.zTree.init($("#regionZTree"),setting,zNodes); //初始化树
+            zTreeObj.expandAll(true);    //true 节点全部展开、false节点收缩
+    </script>
+    <textarea id="texts" cols="40" rows="7"></textarea><br><br>
+    <button id="butt">Creat a tree</button>
+    <!-- <button id="find">find</button> -->
+    <!-- <p id="specialbr">here</p> -->
+</body>
+</html>
