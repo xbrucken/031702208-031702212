@@ -1,6 +1,7 @@
 var i=0;
 var n=0;//家族树数
 var treeNum=[];//导师节点数组
+
 var intarea;//文本域内容
 var Arr;//按行分割
 var Arr2;//学生名按顿号分割
@@ -46,13 +47,16 @@ var setting = {
 
 // function addZTreeNode(obj) {
 //     var newNode = obj;
-//     var treeObj = $.fn.zTree.getzTreeObj("regionZTree");
+
+//     var treeObj = $.fn.zTree.getZTreeObj("regionZTree");
 //     var parentZNode = treeObj.getSelectedNodes(); //获取父节点
 //     newNode.nodeFlg = 1; // 可以自定义节点标识
 //     newNode = treeObj.addNodes(parentZNode[0], newNode, true);
 // }
 // function editZTreeNode(obj) {
+
 //     var zTree = $.fn.zTree.getzTreeObj("regionZTree");
+//     var zTree = $.fn.zTree.getZTreeObj("regionZTree");
 //     var nodes = zTree.getSelectedNodes();
 //     for (var i = 0; i < nodes.length; i++) {
 //         nodes[i].name = obj;
@@ -94,6 +98,7 @@ function toLine(){
         intarea=$("#texts").val();
         Arr=intarea.split(/[(\r\n)\r\n]+/);
     }
+
   function teacherNum()
     {
         for(var t=0;t<Arr.length;t++){
@@ -106,6 +111,7 @@ function toLine(){
         }
         treeNum[n]=Arr.length;
     }
+
 function getSname(x){
         var ss=new String(x);
         var k=ss.indexOf("：");
@@ -113,6 +119,7 @@ function getSname(x){
         behind=ss.substring(k+1,ss.length);
         Arr2=behind.split("、");
 }
+
 function secondLayer(first,last){
     for(var ii=first+1;ii<last;ii++){
         getSname(Arr[ii]);//提取学生名进Arr2
@@ -164,3 +171,4 @@ function thirdLayer(first,last){
 //         zTreeObj.expandAll(true); 
 //     }
 // }
+
