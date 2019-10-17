@@ -1,0 +1,120 @@
+.ztree li a {
+    cursor: pointer;
+    border: solid 0px;
+    border-radius: 7px;
+    background-color: rgba(255, 255, 255, 0.712);
+}
+.ztree li{
+    margin-top: 5px;
+    margin-left: 10px;
+}
+.treed{
+    float: left;
+    margin-left: 15px;
+    margin-top: 25px;
+}
+#regionZTree{
+    height: 490px;
+}
+#kuang{
+    position: fixed;
+    top:25px;
+    left: 30px;
+    width: 940px;
+    height: 520px;
+    border-radius: 20px;
+    opacity: 0.5;
+    border:1px solid lightgray;
+    box-shadow:5px 5px 5px rgb(148, 148, 148);
+    z-index: -2;
+    background:url(wenli.jpg) repeat 30px;
+}
+#welcome{
+    font-family: "Matura MT Script Capitals";
+    font-size: 50px;
+    margin-top: 100px;
+    margin-left: 100px;
+    color: rgb(56, 56, 56);
+}
+#tip{
+    margin-top: 80px;
+    margin-left: 270px;
+    color: rgb(56, 56, 56);
+    font-family: "方正舒体";
+    font-size: 30px;
+}
+#texts{
+    padding: 20px;
+    border-radius: 20px;
+    position: fixed;
+    width: 210px;
+    height: 440px;
+    top: 25px;
+    right: 30px;
+    font-size: 13px;
+}
+#butt{
+    position: fixed;
+    width: 240px;
+    height: 40px;
+    top: 528px;
+    right: 35px;
+    font-family: "Matura MT Script Capitals";
+    font-size: 20px;
+}
+#prabbit{
+    width: 300px;
+}
+#boy{
+    opacity: 0.9;
+    width: 280px;
+    position: fixed;
+    left:745px;
+    bottom:-5px; 
+    z-index: -1;
+}
+button{
+    display: inline-block;
+    border:solid 0px;
+    outline:none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    color:white;
+    background-color: rgb(223, 156, 50);
+    border-radius: 20px;
+    box-shadow:3px 3px 2px rgb(179, 178, 178);
+}
+button:hover{
+    color:rgb(223, 156, 50);
+    background-color:white;
+}
+textarea{
+    /* background:transparent; */
+    opacity: 0.5;
+    border:1px solid lightgray;
+    box-shadow:5px 5px 5px rgb(148, 148, 148);
+    z-index: -2;
+}
+body{
+    color: #000;
+    background-color:rgb(252, 233, 170);
+    background-size: 100%;
+}
+/* .ztree {
+    margin:0; 
+    width:300px; 
+    padding:5px; 
+    color:#333; 
+    word-break: break-all; 
+    word-wrap:break-word;
+}
+.ztree li{
+    padding:0; 
+    margin:0; 
+    list-style:none;  
+    display:inline; 
+    line-height:14px; 
+    text-align:left;  outline:0;
+} */
