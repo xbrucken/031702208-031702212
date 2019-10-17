@@ -43,12 +43,15 @@ var setting = {
 
 // function addZTreeNode(obj) {
 //     var newNode = obj;
+
 //     var treeObj = $.fn.zTree.getZTreeObj("regionZTree");
 //     var parentZNode = treeObj.getSelectedNodes(); //获取父节点
 //     newNode.nodeFlg = 1; // 可以自定义节点标识
 //     newNode = treeObj.addNodes(parentZNode[0], newNode, true);
 // }
 // function editZTreeNode(obj) {
+
+//     var zTree = $.fn.zTree.getzTreeObj("regionZTree");
 //     var zTree = $.fn.zTree.getZTreeObj("regionZTree");
 //     var nodes = zTree.getSelectedNodes();
 //     for (var i = 0; i < nodes.length; i++) {
@@ -57,14 +60,14 @@ var setting = {
 //     }
 // }
 // function removeZTreeNodeBySelect() {
-//     var zTree = $.fn.zTree.getZTreeObj("regionZTree");
+//     var zTree = $.fn.zTree.getzTreeObj("regionZTree");
 //     var nodes = zTree.getSelectedNodes(); //获取选中节点
 //     for (var i = 0; i < nodes.length; i++) {
 //         zTree.removeNode(nodes[i]);
 //     }
 // }
 // function removeZTreeNodeByChecked() {
-//     var zTree = $.fn.zTree.getZTreeObj("regionZTree");
+//     var zTree = $.fn.zTree.getzTreeObj("regionZTree");
 //     var nodes = zTree.getCheckedNodes(true); //获取勾选节点
 //     for (var i = 0; i < nodes.length; i++) {
 //         zTree.removeNode(nodes[i]);
@@ -72,7 +75,7 @@ var setting = {
 // }
 // function removeZTreeNodebPi(obj) {
 //     var idnodes = obj.split(",");
-//     var zTree = $.fn.zTree.getZTreeObj("regionZTree");
+//     var zTree = $.fn.zTree.getzTreeObj("regionZTree");
 //     var nodes = zTree.getSelectedNodes();
 //     for (var i = 0; i < nodes.length; i++) {
 //         var nodes = zTree.getNodeByParam("id", nodes[i]);
@@ -80,7 +83,7 @@ var setting = {
 //     }
 // }
 // function selectzTreeNode(obj) {
-//     var zTree = $.fn.zTree.getZTreeObj("regionZTree");
+//     var zTree = $.fn.zTree.getzTreeObj("regionZTree");
 //     var node = zTree.getNodeByParam("id", obj);
 //     if (node != null) {
 //         zTree.selectNode(node, true); //指定选中ID的节点
@@ -92,6 +95,19 @@ function toLine(){
         Arr=intarea.split(/[(\r\n)\r\n]+/);
     }
 
+  function teacherNum()
+    {
+        for(var t=0;t<Arr.length;t++){
+            var temp = new String(Arr[t]);
+            if(temp.includes("导师"))
+            {
+                treeNum[n]=t;
+                n++;
+            } 
+        }
+        treeNum[n]=Arr.length;
+    }
+
 function getSname(x){
         var ss=new String(x);
         var k=ss.indexOf("：");
@@ -99,6 +115,7 @@ function getSname(x){
         behind=ss.substring(k+1,ss.length);
         Arr2=behind.split("、");
 }
+
 
 function teacherNum(){
     for(var t=0;t<Arr.length;t++){
@@ -110,6 +127,7 @@ function teacherNum(){
     }
     treeNum[n]=Arr.length;
 }
+
 
 function secondLayer(first,last){
     for(var ii=first+1;ii<last;ii++){
@@ -140,6 +158,8 @@ function thirdLayer(first,last){
     for(var ii=first+1;ii<last;ii++){//二级数
         getSname(Arr[ii]);//提取学生名进Arr2
       // var iii=ii-1;
+      //  var iii=ii-1;
+
         zNodes=zTreeObj.getNodes();
         zTreeObj.selectNode(zzNodes[iii]);
         var parentZNode = zTreeObj.getSelectedNodes();
