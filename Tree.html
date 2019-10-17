@@ -33,14 +33,17 @@
         $(document).ready(function() {
             $("#butt").click(function() {
                 toLine();//提取每一行进Arr
-                // for(var i=0;i<Arr.length;i++){
-                //     $("#specialbr").before("<p>"+Arr[i]+"</p>");
-                // }
-                getSname(Arr[0]);//拆第一行→导师名
-                zNodes[0].menuName=(Arr2[0]);
-                zTreeObj=$.fn.zTree.init($("#regionZTree"),setting,zNodes);
-                secondLayer();//xx级xx生
-                thirdLayer();//xxx、xxx、xxx
+
+                teacherNum();
+                for(var treeCirle=0 ; treeCirle<treeNum.length-1 ; treeCirle++ )
+                {
+                    zNodes=[{menuName:"导师" ,open:true}];//开始一棵新树时初始化zNodes
+                    zNodes[0].menuName=(Arr[treeNum[treeCirle]]);//Arr2[0]
+                    zTreeObj=$.fn.zTree.init($("#regionZTree"+treeCirle),setting,zNodes);//初始化zTreeObj
+                    secondLayer(treeNum[treeCirle],treeNum[treeCirle+1]);//xx级xx生
+                    thirdLayer(treeNum[treeCirle],treeNum[treeCirle+1]);//xxx、xxx、xxx
+                    }   
+                $("#texts").val("");//处理完数据后清除文本框
             })
         })
     </script>
@@ -78,16 +81,21 @@
 </head>
 
 <body>
+    <!-- 设定最多展示4棵树 -->
     <div>
-        <ul id="regionZTree" class="ztree"></ul>
+        <ul id="regionZTree0" class="ztree"></ul>
     </div>
-    <script>
-            zTreeObj=$.fn.zTree.init($("#regionZTree"),setting,zNodes); //初始化树
-            zTreeObj.expandAll(true);    //true 节点全部展开、false节点收缩
-    </script>
+    <div>
+        <ul id="regionZTree1" class="ztree"></ul>
+    </div>
+    <div>
+        <ul id="regionZTree2" class="ztree"></ul>
+    </div>
+    <div>
+        <ul id="regionZTree3" class="ztree"></ul>
+    </div>
     <textarea id="texts" cols="40" rows="7"></textarea><br><br>
     <button id="butt">Creat a tree</button>
-    <!-- <button id="find">find</button> -->
-    <!-- <p id="specialbr">here</p> -->
+
 </body>
 </html>
