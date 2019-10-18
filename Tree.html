@@ -5,18 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>⭐TREE⭐</title>
-    <link rel="stylesheet" href="metroStyle.css" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" href="customcss.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="css/metroStyle.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="css/customcss.css" rel="stylesheet" type="text/css"/>
+    <!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/awesome.css" rel="stylesheet" type="text/css"/> -->
     <script type="text/javascript" src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
-    <script type="text/javascript" src="jquery.ztree.all.js"></script>
-    <script type="text/javascript" src="set.js"></script>
+    <script type="text/javascript" src="js/jquery.ztree.all.js"></script>
+    <script type="text/javascript" src="js/set.js"></script>
     <script>
         $(document).ready(function() {
+            $("#search").hide();
             $("#butt").click(function() {
                 $(".invisable").hide();
                 toLine();//提取每一行进Arr
-                teacherNum();
-                for(var treeCirle=0 ; treeCirle<treeNum.length-1 ; treeCirle++ )
+                teacherNum();//树的个数
+                if(n>4)
+                    alert("您输入的树超过显示上限,仅显示前四棵树");
+                moveplace();//根据树的个数排版
+                for(var treeCirle=0;treeCirle<treeNum.length-1;treeCirle++ )
                 {
                     zNodes=[{menuName:"导师" ,open:true}];//开始一棵新树时初始化zNodes
                     zNodes[0].menuName=(Arr[treeNum[treeCirle]]);//Arr2[0]
@@ -24,8 +30,15 @@
                     secondLayer(treeNum[treeCirle],treeNum[treeCirle+1]);//xx级xx生
                     thirdLayer(treeNum[treeCirle],treeNum[treeCirle+1]);//xxx、xxx、xxx
                     zTreeObj.cancelSelectedNode();
+                    zTreeObj.cancelEditName("tObj"+treeCirle);
                 }   
                 $("#texts").val("");//处理完数据后清除文本框
+            })
+            $("#fdj").click(function(){//搜索功能的显隐
+                $("#search").fadeToggle();
+            })
+            $("#an").click(function(){//搜索导师
+                find();
             })
         })
     </script>
@@ -53,14 +66,24 @@
 2015级硕士生：李四、王五、许六
 2016级硕士生：刘一、李二、李三
 2017级本科生：刘六、琪七、司四"></textarea>
-    <p><img src="boy.png" id="boy"></p>
+    <p><img src="htmlimg/boy.png" id="boy"></p>
     <h1 id="welcome" class="invisable">Welcome!</h1>
     <div id="tip" class="invisable">
         ★最多容纳四棵树 <br>
         ★每棵树输入格式见文本域提示内容 <br>
-        ★不同树之间空一行 <br>
+        ★输入不同树之间空一行<br>
+        ★注意最后删去多余换行符 <br>
+        ★每一次生成前请刷新<br><br>
+        ★单击+-符号或双击展开/收缩节点 <br>
+        ★单击选中节点，Ctrl多选/取消<br>
+        ★右上角放大镜图标可展开搜索导师功能
     </div>
-    <!-- <button id="find">find</button> -->
-    <!-- <p id="specialbr">here</p> -->
+    <p><img src="htmlimg/fdj.png" id="fdj"></p>
+    <div id="search">
+        <input type="text" id="stxt" placeholder="搜索他的导师"><br>
+        <span id="result">NONE</span>
+        <button id="an">GO</button>
+    </div>
+    <img src="htmlimg/reload.png" id="shuaxin" onclick="location.reload();">
 </body>
 </html>
