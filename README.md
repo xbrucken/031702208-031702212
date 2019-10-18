@@ -5,7 +5,7 @@
     - metroStyle.css：ztree自带的css样式
     - img文件夹：metroStyle使用的图片素材 
     
-- **htmling文件夹：**放置在html文件的图片
+- **htmling文件夹：** 放置在html文件的图片
     - boy.png：插画
     - fdj.png：放大镜图标
     - reload.png：刷新图标
@@ -14,7 +14,7 @@
     - jquery.ztree.all.js：ztree自带js文件
     - set.js：自己设定的js文件
     
-- **Tree.html：**网页html文件
+- **Tree.html：** 网页html文件
 
 - work.code-workspace：vscode工作区
 
