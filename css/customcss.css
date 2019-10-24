@@ -14,23 +14,23 @@
 }
 .treed{
     float: left;
-    margin-left: 15px;
-    margin-top: 25px;
+    margin-left: 1.9%;
+    margin-top: 2.3%;
 }
 .onetree{
     float: left;
-    margin-left: 230px;
-    margin-top: 25px;
+    margin-left: 25%;
+    margin-top: 2.3%;
 }
 .twotree{
     float: left;
-    margin-left: 140px;
-    margin-top: 25px;
+    margin-left: 13%;
+    margin-top: 2.3%;
 }
 .threetree{
     float: left;
-    margin-left: 73px;
-    margin-top: 25px;
+    margin-left: 5%;
+    margin-top: 2.3%;
 }
 #regionZTree{
     height: 490px;
@@ -38,75 +38,73 @@
 #kuang{
     position: fixed;
     top:0px;
-    left: 30px;
-    width: 940px;
+    left: 2.5%;
+    width: 73.1%;
     height: 100%;
     opacity: 0.5;
     border:1px solid lightgray;
     box-shadow:5px 5px 5px rgb(148, 148, 148);
     z-index: -2;
-    background:url(wenli.jpg) repeat 100px;
+    background:url(wenli.jpg);
+    background-size: cover;
 }
 #welcome{
     font-family: "Matura MT Script Capitals";
-    font-size: 50px;
-    margin-top: 100px;
-    margin-left: 100px;
+    font-size: 330%;
+    margin-top: 8%;
+    margin-left: 9%;
     color: rgb(56, 56, 56);
 }
 #tip{
-    margin-top: 50px;
-    margin-left: 200px;
+    margin-top: 3.5%;
+    margin-left: 15.5%;
     color: rgb(56, 56, 56);
     font-family: "方正舒体";
-    font-size: 27px;
+    font-size: 170%;
 }
 #texts{
     padding: 20px;
     border-radius: 20px;
     position: fixed;
-    width: 210px;
-    height: 440px;
-    top: 25px;
-    right: 30px;
+    width: 16.4%;
+    height: 72%;
+    top: 4%;
+    right: 2.5%;
     font-size: 13px;
 }
 #butt{
     position: fixed;
-    width: 240px;
-    height: 40px;
-    top: 528px;
-    right: 35px;
+    width: 19%;
+    height: 7%;
+    bottom: 6.5%;
+    right: 2.6%;
     font-family: "Matura MT Script Capitals";
     font-size: 20px;
 }
-#prabbit{
-    width: 300px;
-}
 #boy{
     opacity: 0.8;
-    width: 280px;
+    width: 22%;
     position: fixed;
-    left:745px;
-    bottom:-5px; 
+    left:58%;
+    bottom:-1%; 
     z-index: -1;
 }
 #fdj{
     opacity: 0.8;
-    width: 40px;
+    width: 3.1%;
     position: fixed;
-    right:320px;
-    top:15px; 
+    right:25.2%;
+    top:2.5%; 
 }
 #fdj:hover{
     cursor: pointer;
 }
 #search{
     position: fixed;
-    top:15px;
-    right:370px;
-    width: 120px;
-    height: 66px;
+    top:2.5%;
+    right:29%;
+    width: 9.4%;
+    height: 10.3%;
     border-radius: 20px;
     opacity: 0.6;
     background-color: white;
@@ -114,10 +112,10 @@
 }
 #shuaxin{
     opacity: 0.5;
-    width: 28px;
+    width: 2%;
     position: fixed;
-    right:50px;
-    bottom:115px; 
+    right:3.6%;
+    bottom:19%; 
 }
 #shuaxin:hover{
     cursor: pointer;
@@ -135,8 +133,8 @@
 }
 #an{
     position: fixed;
-    top:60px;
-    right:321px;
+    top:9.6%;
+    right:25.3%;
 }
 button{
     display: inline-block;
